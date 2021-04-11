@@ -1,0 +1,27 @@
+#For creating image features, this is going through class 1 images of the targett function Animal
+from PIL import Image
+import os
+  
+# creating an image object
+def imaging():
+    path = "C:/Users/Jackson/Documents/MLProject/train/animal/class_1/"
+    print("filename", "R_value", "G_value", "B_value", "label_value")
+    for image_path in os.listdir(path):
+        input_path = os.path.join(path, image_path)
+        im = Image.open(input_path, mode = "r") 
+        R = 0
+        G = 0
+        B = 0
+        width, height = im.size
+        for x in range(width):
+            for y in range(height):
+                r,g,b = im.getpixel((x,y))
+                R += r
+                G += g
+                B += b
+        R = (R/width)/height
+        G = (G/width)/height
+        B = (B/width)/height
+        print(image_path, R, G, B, 1)
+
+print(imaging())
