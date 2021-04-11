@@ -2,6 +2,7 @@
 Here I will explain the choices I made in the project and what I what I ultimately did to complete the project, in the face of some difficulties.
 I also will explain what each file refers to:
 All-R: Compilation of most of my code logs in R
+Detail-R: The R code used that helped create my models and features
 Pythoncode: Code used for the image processing
 
 
