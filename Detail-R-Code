@@ -1,0 +1,29 @@
+#When processing text feature
+#for when an error says more columns than column names
+NAMES <- read.csv("C:/Users/Jackson/Documents/MLProject/Text/Ramayana.txt", nrow = 3, stringsAsFactors = FALSE, sep = ",")
+#else
+t <- read.csv("C:/Users/Jackson/Documents/MLProject/Text/")
+t1 <- toString(t)
+sum <- 0
+df <- text_one_hot(t1, 100)
+for (i in df){
+sum = sum + i}
+sum = sum/length(df)
+sum
+
+
+
+#create sample
+set.seed(1)
+row.number <- sample(1:nrow(data), 0.8*nrow(data))
+train = data[row.number,]
+test = data[-row.number,]
+dim(train)
+dim(test)
+
+
+#run lm function and create the mean squared error
+lm1 <- lm(formula = label_value ~ R_value + G_value + B_value, data = train)
+sm <- summary(lm1)
+mse<-mean(sm$residuals^2) 
+mse
